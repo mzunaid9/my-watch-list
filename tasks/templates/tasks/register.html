@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - Watchlist</title>
+</head>
+<body>
+    <div style="width: 300px; margin: 50px auto;">
+        <h2>Créer un compte</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">S'inscrire</button>
+        </form>
+
+        <p>Déjà un compte ? <a href="{% url 'login' %}">Connecte-toi</a></p>
+    </div>
+</body>
+</html>

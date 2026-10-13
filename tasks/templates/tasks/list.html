@@ -1,5 +1,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<!--<div style="padding: 20px; background-color: #f8f9fa; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">-->
+    
+<div style>
+	<div>
+        <span>Connecté en tant que : <strong>{{ request.user.username }}</strong></span>
+    </div>
+    <div>
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <!--<button type="submit" class="btn btn-sm btn-danger">Se déconnecter</button>-->
+			<button type="submit">Se déconnecter</button>
+        </form>
+    </div>
+</div>
 <style>
 
     body{

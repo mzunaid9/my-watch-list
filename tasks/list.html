@@ -1,0 +1,27 @@
+<div style="padding: 20px; background-color: #f8f9fa; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        <!-- Affiche le nom de l'utilisateur connecté -->
+        <span>Connecté en tant que : <strong>{{ request.user.username }}</strong></span>
+    </div>
+    <div>
+        <!-- Formulaire ou lien de déconnexion -->
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-danger">Se déconnecter</button>
+        </form>
+    </div>
+</div>
+<div style="margin-bottom: 15px;">
+    <form method="POST" action="{% url 'add_netflix' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Netflix</button>
+    </form>
+    <form method="POST" action="{% url 'add_amazon' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Amazon Prime</button>
+    </form>
+    <form method="POST" action="{% url 'add_appletv' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Apple TV</button>
+    </form>
+</div>
