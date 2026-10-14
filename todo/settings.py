@@ -146,3 +146,16 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_QUERY_EMAIL = True
 
 SITE_ID = 1
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://redis:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+TMDB_API_BASE_URL = "https://api.themoviedb.org/3"
+#TMDB_API_BASE_URL = "https://domaine-inexistant-tmdb-12345.com"

@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN pip install --no-cache-dir --upgrade pip
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt gunicorn psycopg2-binary
+RUN pip install --no-cache-dir -r requirements.txt gunicorn psycopg2-binary django-redis redis
 
 COPY . .
 
